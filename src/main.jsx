@@ -10,6 +10,7 @@ import { useEffect} from "react";
 
 export default function Main() {
   const [data, setdata] = useState([]);
+  const [style, setstyle] = useState(1)
   
   useEffect(() => {
     axios
@@ -22,11 +23,11 @@ export default function Main() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App data={data}/>,
+      element: <App data={data} style={style} setstyle={setstyle}/>,
     },
     {
       path:"/:id",
-      element:<Land data={data} />
+      element:<Land data={data}  style={style} setstyle={setstyle} />
   
     },
   ]);
